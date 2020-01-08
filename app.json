@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/project/index/index",
     "pages/honor/index/index",
     "pages/competition/index/index",
     "pages/resume/index/index",
-    "pages/project/index/index",
     "pages/contact/index/index",
     "pages/logs/logs",
     "pages/competition/secondPage/content/content"

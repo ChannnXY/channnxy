@@ -1,2 +1,11 @@
-<!--pages/project/index/index.wxml-->
-<text>pages/project/index/index.wxml</text>
+<!-- 轮播图 -->
+<image
+          src='http://via.placeholder.com/375x600'
+          class='swiper--img'
+          style='height:{{winHeight}}px'>
+</image>
+
+<!-- 标签栏 -->
+<view>
+  <view>111111</view>
+</view>
