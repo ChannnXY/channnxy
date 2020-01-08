@@ -1,0 +1,33 @@
+<view class='card' wx:for="{{content}}" wx:key="{{index}}" wx:for-index="idx">
+  <view style='display:flex;align-items:center'>
+    <view class="{{idx==0?'card--number__dark':'card--number__light'}}">{{idx+1}}</view>
+    <view class='card--title'>{{item.horner}}</view>
+  </view>
+  <view style='text-align:right'>
+    <image src='{{item.img}}' lazy-load='true' class='card--image'></image>
+  </view>
+  <navigator 
+                  url=''
+                  hover-class='none'
+                  class='report--nav-outer'
+                  wx:if="{{item.subtitleList.length>0}}">
+    <view  class='report--nav-inline'>
+      <view class='report--button'>相关报道</view>
+      <view class='report--button' style='margin:0 24rpx'>|</view>
+      <swiper
+                autoplay='true' 
+                interval='5000' 
+                duration='1000' 
+                circular='true' 
+                vertical='true'
+                style='height:66rpx;flex:1'>
+        <swiper-item
+                            wx:for="{{item.subtitleList}}"
+                            wx:key="index"
+                            wx:for-item="subtitle">
+              <view class='report--subtitle'>{{subtitle.title}}</view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </navigator>
+</view>

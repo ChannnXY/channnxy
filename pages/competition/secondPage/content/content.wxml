@@ -1,0 +1,47 @@
+<!-- 轮播图 -->
+<view>
+  <swiper
+              indicator-dots='true' 
+              autoplay='true' 
+              interval='5000' 
+              duration='1000' 
+              circular='true' 
+              indicator-color='#969696' 
+              indicator-active-color='#fff' 
+              style='height:700rpx'>
+    <swiper-item wx:for="{{content.swiperList}}" wx:key="index">
+      <image src='{{item}}' lazy-load='true' class='swiper--img'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 标题 -->
+<view class='info'>
+  <view class='info--title'>国家大学生创新创业项目</view>
+  <view class='info--subtitle'>——《PBL理论指导下的乡村振兴战略研究》</view>
+  <view style='display:flex'>
+    <view class='info--btn'>立项并结题</view>
+    <view class='info--likes-bg'>
+      <image src='/images/icon-likes.png' class='info--likes-img'></image>
+      <view class='info--likes-number'>320</view>
+    </view>
+  </view>
+</view>
+
+<!-- 团队角色 -->
+<view wx:if="{{content.role.length>0}}" class="content">
+  <view class='content--title'>团队角色</view>
+  <view class='content--text'>{{content.role}}</view>
+</view>
+
+<!-- 简介 -->
+<view wx:if="{{content.intro.length>0}}" class="content">
+  <view class='content--title'>项目简介</view>
+  <view wx:for="{{content.intro}}" wx:key="{{index}}" class='content--text'>{{item}}</view>
+</view>
+
+<!-- 简介 -->
+<view wx:if="{{content.result.length>0}}" class="content">
+  <view class='content--title'>成果</view>
+  <view wx:for="{{content.result}}" wx:key="{{index}}" class='content--text'>{{item}}</view>
+</view>

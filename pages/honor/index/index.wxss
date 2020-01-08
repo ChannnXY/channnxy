@@ -1,0 +1,68 @@
+.card{
+  margin: 36rpx;
+  padding: 24rpx;
+  border-radius: 36rpx;
+  background: white;
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+}
+
+.card--number__light{
+  height: 68rpx;
+  width: 68rpx;
+  border-radius: 34rpx;
+  border: 2rpx solid #5B139A;
+  color: #5B139A;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  text-align: center;
+}
+
+.card--number__dark{
+  height: 68rpx;
+  width: 68rpx;
+  border-radius: 34rpx;
+  background: #5B139A;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  text-align: center;
+}
+
+.card--title{
+  font-size: 32rpx;
+  color: #464646;
+  line-height: 240%;
+  margin-left: 36rpx;
+}
+
+.card--image{
+  width: 540rpx;
+  height: 720rpx;
+  border-radius: 16rpx;
+}
+
+.report--nav-outer{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.report--nav-inline{
+  width: 540rpx;
+  display: flex;
+}
+
+.report--subtitle{
+  flex:1;
+  font-size: 28rpx;
+  line-height: 66rpx;
+  color: #A1A1A1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.report--button{
+  font-size: 28rpx;
+  line-height: 66rpx;
+  color: #5C189D;
+}

@@ -1,0 +1,74 @@
+.swiper{}
+
+.swiper--img{
+  width: 750rpx;
+  height: 700rpx;
+}
+
+.info{
+  padding: 36rpx;
+}
+
+.info--title{
+  font-size: 48rpx;
+  color: #464646;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info--subtitle{
+  font-size: 24rpx;
+  color: #9A9797;
+  text-align:right;
+  line-height: 220%;
+}
+
+.info--btn{
+  width: 520rpx;
+  height: 88rpx;
+  margin: 36rpx 0;
+  border-radius: 24rpx;
+  text-align: center;
+  background: linear-gradient(to right,#6682D6,#5B139A);
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+  font-size: 28rpx;
+  line-height: 88rpx;
+  color: white;
+}
+
+.info--likes-bg{
+  flex: 1;
+  height: 88rpx;
+  margin: 36rpx 0 36rpx 36rpx;
+  text-align: center;
+  background: white;
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+}
+
+.info--likes-img{
+  width: 40rpx;
+  height: 32rpx;
+  margin-top: 12rpx;
+}
+
+.info--likes-number{
+  font-size: 20rpx;
+  color: #9A9797;
+}
+
+.content{
+  padding: 0 36rpx 36rpx 36rpx;
+}
+
+.content--title{
+  font-size: 44rpx;
+  color: #AAAAAA;
+  line-height: 220%;
+}
+
+.content--text{
+  font-size: 28rpx;
+  color: #9A9797;
+  line-height: 240%;
+}

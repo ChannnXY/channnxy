@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/honor/index/index",
+    "pages/competition/index/index",
+    "pages/resume/index/index",
+    "pages/project/index/index",
+    "pages/contact/index/index",
+    "pages/logs/logs",
+    "pages/competition/secondPage/content/content"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#6CB4F1",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/resume/index/index",
+        "text": "简历",
+        "iconPath": "/images/img.png",
+        "selectedIconPath": "/images/img.png"
+      },
+      {
+        "pagePath": "pages/competition/index/index",
+        "text": "竞赛",
+        "iconPath": "/images/img.png",
+        "selectedIconPath": "/images/img.png"
+      },
+      {
+        "pagePath": "pages/project/index/index",
+        "text": "项目",
+        "iconPath": "/images/img.png",
+        "selectedIconPath": "/images/img.png"
+      },
+      {
+        "pagePath": "pages/honor/index/index",
+        "text": "荣誉",
+        "iconPath": "/images/img.png",
+        "selectedIconPath": "/images/img.png"
+      },
+      {
+        "pagePath": "pages/contact/index/index",
+        "text": "联系我",
+        "iconPath": "/images/img.png",
+        "selectedIconPath": "/images/img.png"
+      }
+    ]
+  }
+}

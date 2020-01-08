@@ -1,0 +1,94 @@
+.header{}
+
+.header--title{
+  margin: 56rpx 0 0 24rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #464646;
+}
+
+.header--subTitle{
+  margin-left: 24rpx;
+  font-size: 28rpx;
+  line-height: 220%;
+  color: #B2B2B2;
+}
+
+.card{display: flex;}
+
+.card--left-bg{
+  position: relative;
+  width: 200rpx;
+  vertical-align: bottom;
+  border-radius: 16rpx;
+  margin: 48rpx 36rpx 0 24rpx;
+  padding: 16rpx 24rpx 16rpx 0%;
+}
+
+.card--left-container{
+  padding: 0 16rpx;
+  position: absolute;
+  bottom: 24rpx;
+}
+
+.card--left-bg__dark{
+  background: linear-gradient(#6CBBF5,#5B139A);
+}
+
+.card--left-bg__light{
+  background: #fff;
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+}
+
+.card--left-title{
+  font-size: 80rpx;
+  line-height: 90%
+}
+
+.card--left-subTitle{
+  font-size: 20rpx;
+  line-height: 280%
+}
+
+.card--left__dark{
+  color: #464646;
+}
+
+.card--left__light{
+  color: #FFFFFF;
+}
+
+.card--right{
+  margin: 48rpx 24rpx 24rpx 0;
+}
+
+.card--right-title{
+  font-size: 28rpx;
+  color: #464646;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card--right-subTitle{
+  margin-right: 24rpx;
+  font-size:24rpx;
+  line-height: 240%;
+  color: #9A9797;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card--right-content{
+  font-size: 22rpx;
+  color: #9A9797;
+  line-height: 180%;
+}
+
+.card--devide{
+  height: 2rpx;
+  width: 50%;
+  background-color: #E9E9E9;
+  margin: 16rpx 0 12rpx 0;
+}

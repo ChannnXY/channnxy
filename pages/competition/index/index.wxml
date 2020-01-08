@@ -1,0 +1,37 @@
+<view class='header'>
+  <view class='header--title'>获奖情况</view>
+  <view class='header--subTitle'>国家级立项一项，省级以上奖项四项</view>
+</view>
+<!-- 获奖列表第一项 -->
+<navigator 
+                class='card'
+                style=" {{idx===competitionList.length-1?'padding-bottom:36rpx':'0'}}"
+                hover-class='false'
+                wx:for="{{competitionList}}"
+                wx:key="idx"
+                wx:for-index="idx"
+                url='/pages/competition/secondPage/content/content?id={{item.id}}'>
+  <view class="card--left-bg {{idx==0?'card--left-bg__dark':'card--left-bg__light'}}">
+    <view class='card--left-container'>
+      <view class="card--left-title {{idx==0?'card--left__light':'card--left__dark'}}">0{{idx+1}}</view>
+      <view class="card--left-subTitle {{idx==0?'card--left__light':'card--left__dark'}}">
+        {{item.progress==100?'completed':'working'}}
+      </view>
+      <progress 
+      percent='{{item.progress}}'
+      color="{{item.progress==100?'#9D7FCA':'#F7F7F7'}}"
+      activeColor="{{item.progress==100?'#FFFFFF':'#441A68'}}"
+      border-radius='8'>
+      </progress>
+    </view>
+  </view>
+  <view class='card--right'>
+    <view class='card--right-title'>{{item.title}}</view>
+    <view class='card--right-subTitle'>{{item.subtitle}}</view>
+    <view class='card--devide'></view>
+    <view class='card--right-content'>
+      <view>团队角色：{{item.role}}</view>
+      <view>项目简介：{{item.intro}}</view>
+    </view>
+  </view>
+</navigator>
