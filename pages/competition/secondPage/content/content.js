@@ -11,7 +11,7 @@ Page({
       honor: "立项并结题",
       isLike: false,
       likesNumber: 320,
-      swiperList: ['http://via.placeholder.com/375x350', 'http://via.placeholder.com/375x350', 'http://via.placeholder.com/375x350'],
+      swiperList: ['http://via.placeholder.com/375x420', 'http://via.placeholder.com/375x420', 'http://via.placeholder.com/375x420'],
       role: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
       intro: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "],
       result: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", 'http://via.placeholder.com/375x350',"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "],

@@ -6,6 +6,14 @@ function getWinHeight(cb){
   })
 }
 
+function getItemHeight(item,cb){
+  var query = wx.createSelectorQuery();
+  query.select('.tab').boundingClientRect(function (res) {
+    cb(res.height);
+  }).exec()
+}
+
 module.exports={
-  getWinHeight: getWinHeight
+  getWinHeight: getWinHeight,
+  getItemHeight: getItemHeight
 }

@@ -3,3 +3,71 @@
 .swiper--img{
     width: 750rpx;
 }
+
+.tab{
+  display: flex;
+  justify-content: space-around;
+  padding: 36rpx 0 36rpx 36rpx;
+  z-index: 999;
+}
+
+.tab__top{
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.tab--item{
+  width: 33%;
+  margin-right: 36rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+  font-size: 28rpx;
+  text-align: center;
+  padding: 24rpx;
+}
+
+.tab--item__dark{
+  background: linear-gradient(to right,#6682D6,#5B139A);
+  color: #FFF;
+}
+
+.tab--item__light{
+  background: #FFF;
+  color: #6682D6;
+}
+
+.intro{
+  width: 100%;
+  position: fixed;
+  padding: 0 36rpx 36rpx 36rpx;
+}
+
+.intro--title{
+  font-size: 44rpx;
+  color: #AAAAAA;
+  line-height: 220%;
+}
+
+.intro--text{
+  font-size: 28rpx;
+  color: #9A9797;
+  line-height: 240%;
+}
+
+.intro--text__subtitle{
+  font-size: 28rpx;
+  color: rgb(85, 80, 80);
+  line-height: 240%;
+}
+
+.intro--image{
+  width: 686rpx;
+  height: 600rpx;
+}
+
+.intro--image__aspectFill{
+  display: flex;
+  width: 686rpx;
+  height: 1200rpx;
+}

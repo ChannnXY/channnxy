@@ -1,11 +1,63 @@
-<!-- 轮播图 -->
 <image
           src='http://via.placeholder.com/375x600'
           class='swiper--img'
-          style='height:{{winHeight}}px'>
+          style='height:{{winHeight}}px'
+          hidden='{{imgFlag}}'
+          bindtouchstart='imgScrollStartListener'
+          bindtouchend='imgScrollEndListener'>
 </image>
 
 <!-- 标签栏 -->
-<view>
-  <view>111111</view>
+<view class='tab'>
+    <view wx:for="{{tabList}}"
+            wx:key="{{index}}"
+            wx:for-index="idx"
+            bindtap='tabClickListener'
+            data-index='{{idx}}'
+            class="tab--item {{currrentTab==idx?'tab--item__dark':'tab--item__light'}}">{{item}}</view>
 </view>
+
+
+    <!-- 项目简介 -->
+    <scroll-view class="intro"
+                      wx:if="{{currrentTab===0}}"
+                      style='padding-top:{{topHeight}}'
+                      scroll-y="true">
+      <view class='intro--title'>团队责任</view>
+      <view wx:for="{{intro}}" wx:key="{{index}}" class='intro--text'>
+        {{item}}
+      </view>
+      <view class='intro--title'>项目简介</view>
+      <view wx:for="{{roles}}" wx:key="{{index}}" class='intro--text'>
+        {{item}}
+      </view>
+      <view class='intro--title'>项目成果</view>
+      <view wx:for="{{result}}" wx:key="{{index}}" class='intro--text'>
+        {{item}}
+      </view>
+    </scroll-view>
+
+    <!-- 产品展示 -->
+    <scroll-view class="intro"
+                      wx:if="{{currrentTab===1}}"
+                      style='padding-top:{{topHeight}}'
+                      scroll-y="true">
+      <image wx:for="{{products}}" wx:key="{{index}}" src='{{item}}' class='intro--image__aspectFill'></image>
+    </scroll-view>
+
+    <!-- 技术难点 -->
+    <scroll-view class="intro"
+                      wx:if="{{currrentTab===2}}"
+                      style='padding-top:{{topHeight}}'
+                      scroll-y="true">
+      <view wx:for="{{problems}}" wx:key="{{index}}" wx:for-index="idx">
+        <view class='intro--title'>技术难点{{idx+1}}</view>
+        <view class='intro--text'>
+          问题描述：{{item.intro}}
+        </view>
+        <view class='intro--text'>
+          解决方案：{{item.solutions}}
+        </view>
+        <image wx:if="{{item.url.length>0}}" src='{{item.url}}' class="intro--image"></image>
+      </view>
+    </scroll-view>
