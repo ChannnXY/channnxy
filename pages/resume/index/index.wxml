@@ -1,2 +1,112 @@
-<!--pages/resume/index/index.wxml-->
-<text>pages/resume/index/index.wxml</text>
+<view class='card'>
+    <image src='http://via.placeholder.com/80x80' class='card--image'></image>
+    <view class='card--intro'>
+      <view class='card--title' style='font-weight:bold'>陈心远</view>
+      <view class='card--title'>意向：前端开发实习生</view>
+    </view>
+</view>
+
+<view class='info' bindlongtap='cardLongTapListener'>
+  <view style='display:flex'>
+    <view class='info--number info--number__light'>01</view>
+    <view class='info--title'>基本信息</view>
+  </view>
+  <view class='info--line info--line__3'>
+    <view>杭州</view>
+    <view>数字媒体技术</view>
+    <view>本科<span style="margin:8rpx;">|</span>2021届</view>
+  </view>
+  <view class='info--line'>
+    <view class='info--line_title'>e-mail：</view>
+    <view>channnxy@163.com</view>
+  </view>
+  <view class='info--line'>
+    <view class='info--line_title'>gitHub：</view>
+    <view>ChannnXY</view>
+  </view>
+  <view class='info--line'>
+    <view class='info--line_title'>职务：</view>
+    <view>千库网签约设计师（兼职，非主要方向）</view>
+  </view>
+</view>
+
+<view class='info' bindlongtap='cardLongTapListener'>
+  <view style='display:flex'>
+    <view class='info--number info--number__light'>02</view>
+    <view class='info--title'>个人技能</view>
+  </view>
+  <view class='info--line' style='flex-direction:column'>
+    <view>1、具备良好的编程基础，熟悉C++，JAVA等面向对象语言。</view>
+    <view>2、熟练掌握HTML+CSS+JavaScript，能使用并修改MUI，element-ui等方法库，Vue.js等前端框架，有安卓开发经验。</view>
+    <view>3、了解计算机网络、数据库等基本知识，能独立开发并部署node服务。</view>
+    <view>4、有产品交互设计和UI设计经验，具备产品思维，能与PM，UI及后端工程师有有效的沟通。</view>
+  </view>
+</view>
+
+<view class='info' bindlongtap='cardLongTapListener'>
+  <view style='display:flex'>
+    <view class='info--number info--number__light'>03</view>
+    <view class='info--title'>校内经历</view>
+  </view>
+  <view class='info--line info--line__3'style='font-weight:bold'>
+    <view>2018.06-至今</view>
+    <view>533实验室</view>
+    <view>前端负责人</view>
+  </view>
+  <view class='info--line' style='flex-direction:column'>
+    <view>1、组织前端方向成员进行技术学习，开展技术交流会及月度前端技术考核。</view>
+    <view>2、组织实验室开发项目推进，承接校内外项目。</view>
+  </view>
+</view>
+
+<view class='info' bindlongtap='cardLongTapListener'>
+  <view style='display:flex'>
+    <view class='info--number info--number__light'>04</view>
+    <view class='info--title'>项目经历</view>
+  </view>
+  <view class='info--line info--line__3'style='font-weight:bold'>
+    <view>2018.03-至今</view>
+    <view>辩论Online</view>
+    <view>PM、UI、前端</view>
+  </view>
+  <view class='info--line' style='flex-direction:column'>
+    <view>1、作为产品PM，UI设计师及前端工程师设计和开发基于微信小程序的线上辩论平台，包括类QQ群团队管理，视频，论坛，投票，报名等功能</view>
+    <view>2、产品技术成果转让至浙江声临其近文化发展有限公司，目前有三万用户量，五项合作国际赛事，数百原创辩题以及有马来亚大学辩论队，曼彻斯特大学辩论队等六十余支国内外高校辩论队。</view>
+  </view>
+</view>
+
+<view class='info' bindlongtap='cardLongTapListener'>
+  <view style='display:flex'>
+    <view class='info--number info--number__light'>05</view>
+    <view class='info--title'>获奖情况</view>
+  </view>
+  <view class='info--line'>
+      <view class='info--line_title'>2019.12</view>
+      <view>2019年大学生年度人物</view>
+    </view>
+    <view class='info--line'>
+      <view class='info--line_title'>2019.10</view>
+      <view>省政府奖学金、一等奖学金、三好学生</view>
+    </view>
+    <view class='info--line'>
+      <view class='info--line_title'>2018.11</view>
+      <view>蓝桥杯视觉艺术设计大赛 省二等奖</view>
+    </view>
+    <view class='info--line'>
+      <view class='info--line_title'>2018.10</view>
+      <view>浙江省大学生多媒体设计大赛 省二等奖一项，省三等奖两项</view>
+    </view>
+</view>
+
+<!-- 分享按钮 -->
+<view class='share'>
+  <view class='share--outer'>
+    <image src='/images/img.png' class='share--image'></image>
+    <view class='share--text'>分享</view>
+  </view>
+</view>
+
+<view class="share--tip {{tipAnimationFlag?'share--tip__show':'share--tip__none'}}" wx:if="{{tipFlag}}">
+  <view class='share--rec'>转发给你的HR朋友，给孩子口饭吃吧</view>
+  <view class="share-triangle"></view>
+</view>

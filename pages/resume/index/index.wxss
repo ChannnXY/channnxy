@@ -1,1 +1,140 @@
-/* pages/resume/index/index.wxss */
+.card{
+  display: flex;
+  margin: 36rpx;
+  background: linear-gradient(to right,#6682D6,#5B139A);
+  border-radius: 24rpx;
+  padding: 36rpx;
+  box-shadow:  0 20rpx 40rpx rgba(91, 19, 154, 0.15);
+}
+
+.card--image{
+  height: 160rpx;
+  width: 160rpx;
+  border-radius: 160rpx;
+  border: 8rpx solid #FFFFFF;
+  margin-right: 36rpx;
+}
+
+.card--intro{
+  color: #fff;
+  flex: 1;
+}
+
+.card--title{
+  font-size: 36rpx;
+  line-height: 240%;
+}
+
+.share{
+  position: fixed;
+  bottom: 36rpx;
+  right: 36rpx;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 128rpx;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10rpx 30rpx rgba(00, 00, 00, 0.05);
+}
+
+.share--outer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.share--image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.share--text{
+  font-size: 24rpx;
+  color: #9A9797;
+}
+
+.share--tip{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 172rpx;
+  bottom: 74rpx;
+  transition: opacity 1s;
+}
+
+.share--tip__show{
+  opacity: 100;
+}
+
+.share--tip__none{
+  opacity: 0;
+}
+
+.share-triangle{
+  width: 0; 
+  height: 0;
+  border-width: 16rpx;
+  border-style: solid;
+  border-color: transparent  transparent transparent rgba(00, 00, 00, 0.5);
+}
+
+.share--rec{
+  border-radius: 16rpx;
+  color: #FFFFFF;
+  background: rgba(00, 00, 00, 0.5);
+  font-size: 24rpx;
+  padding: 16rpx;
+}
+
+.info{
+  background: white;
+  border-radius: 36rpx;
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+  margin: 36rpx;
+  padding: 24rpx;
+}
+
+.info--number{
+  height: 68rpx;
+  width: 68rpx;
+  border-radius: 34rpx;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  text-align: center;
+  margin-right: 24rpx;
+}
+
+.info--number__light{
+  border: 2rpx solid #5B139A;
+  color: #5B139A;
+}
+
+.info--number__dark{
+  background: #5B139A;
+  color: #FFFFFF;
+}
+
+.info--title{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #464646;
+  line-height: 240%;
+}
+
+.info--line{
+  display: flex;
+  font-size: 28rpx;
+  color: #464646;
+  line-height: 220%;
+}
+
+.info--line__3{
+  justify-content: space-between;
+  margin-top: 24rpx;
+}
+
+.info--line_title{
+  font-weight: bold;
+  margin-right: 16rpx;
+}

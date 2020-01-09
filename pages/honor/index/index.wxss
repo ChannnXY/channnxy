@@ -37,7 +37,6 @@
 
 .card--image{
   width: 540rpx;
-  height: 720rpx;
   border-radius: 16rpx;
 }
 

@@ -15,14 +15,14 @@ Page({
       },
       {
         horner: "浙江科技学院2019大学生年度人物",
-        img: "http://via.placeholder.com/270x360",
+        img: "http://via.placeholder.com/270x160",
         subtitleList: [{ title: "我院学生陈心远荣获创新创业类年度人物", id: 10000 },
         { title: "我院学生陈心远荣获创新创业类年度人物", id: 10000 },
         { title: "我院学生陈心远荣获创新创业类年度人物", id: 10000 }]
       },
       {
         horner: "浙江科技学院2019大学生年度人物",
-        img: "http://via.placeholder.com/270x360"
+        img: "http://via.placeholder.com/270x160"
       }
     ]
     

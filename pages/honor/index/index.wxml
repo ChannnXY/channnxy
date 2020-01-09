@@ -4,7 +4,7 @@
     <view class='card--title'>{{item.horner}}</view>
   </view>
   <view style='text-align:right'>
-    <image src='{{item.img}}' lazy-load='true' class='card--image'></image>
+    <image src='{{item.img}}' mode='widthFix' class='card--image'></image>
   </view>
   <navigator 
                   url=''
