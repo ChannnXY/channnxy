@@ -127,6 +127,7 @@
   font-size: 28rpx;
   color: #464646;
   line-height: 220%;
+  text-align:justify;
 }
 
 .info--line__3{

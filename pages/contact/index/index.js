@@ -1,18 +1,42 @@
-// pages/contact/index/index.js
+var util = require('../../../utils/myUtil.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    keyBoardBottom:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.initScrollView();
+  },
 
+  /**
+   * 初始化scroll-view高度
+   */
+  initScrollView:function(){
+    var that = this;
+    util.getItemHeight('.header', function (res) {
+      that.setData({ headerHeight: res })
+    })
+    util.getWinHeight(function (res) {
+      that.setData({ winHeight: res })
+    })
+  },
+
+  /**
+   * 拉起键盘的时候重定位input框位置
+   */
+  keyBoardFocusListener:function(e){
+    this.setData({ keyBoardBottom: 7})
+  },
+
+  keyBoardBlurListener: function (e) {
+    this.setData({ keyBoardBottom: 0 })
   },
 
   /**

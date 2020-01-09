@@ -1,0 +1,89 @@
+.input{
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  align-items: center;
+  background: white;
+}
+
+.input--image{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 72rpx;
+  margin: 0 24rpx;
+}
+
+.input--input{
+  flex: 1;
+  height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: 16rpx;
+  background-color: rgba(00, 00, 00, 0.05);
+  font-size: 28rpx;
+  color: #464646;
+  line-height: 72rpx;
+}
+
+.input--placeholder{
+  font-size: 28rpx;
+  color: rgba(00, 00, 00, 0.5);
+  line-height: 72rpx;
+}
+
+.input--button{
+  margin: 0 24rpx;
+  border-radius: 16rpx;
+  background: linear-gradient(to right,#6682D6,#5B139A);
+  color: white;
+  font-size: 28rpx;
+}
+
+.header{}
+
+.header--title{
+  margin: 56rpx 0 0 24rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #464646;
+}
+
+.header--subTitle{
+  margin-left: 24rpx;
+  font-size: 28rpx;
+  line-height: 220%;
+  color: #B2B2B2;
+}
+
+.card{
+  background: white;
+  border-radius: 36rpx;
+  box-shadow: 0 20rpx 40rpx rgba(00, 00, 00, 0.05);
+  margin: 36rpx;
+  padding: 24rpx;
+}
+
+.card--user{
+  display: flex;
+  align-items:center;
+}
+
+.card--image{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 72rpx;
+  margin-right: 36rpx;
+}
+
+.card--name{
+  font-size: 32rpx;
+  color: #464646;
+}
+
+.card--content{
+  margin-top: 36rpx;
+  font-size: 28rpx;
+  color: #464646;
+  line-height: 220%;
+  text-align:justify;
+}

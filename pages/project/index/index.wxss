@@ -53,6 +53,7 @@
   font-size: 28rpx;
   color: #9A9797;
   line-height: 240%;
+  text-align:justify;
 }
 
 .intro--text__subtitle{

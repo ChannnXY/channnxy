@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/resume/index/index",
     "pages/contact/index/index",
+    "pages/resume/index/index",
     "pages/project/index/index",
     "pages/honor/index/index",
     "pages/competition/index/index",

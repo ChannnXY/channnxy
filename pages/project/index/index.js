@@ -69,7 +69,7 @@ Page({
           duration: 0
         })
         //计算内容高度
-        util.getItemHeight('#tab',function(res){
+        util.getItemHeight('.tab',function(res){
           that.setData({ tabHeight: res})
         })
       }, 100);

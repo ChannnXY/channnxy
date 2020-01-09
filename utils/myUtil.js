@@ -8,7 +8,8 @@ function getWinHeight(cb){
 
 function getItemHeight(item,cb){
   var query = wx.createSelectorQuery();
-  query.select('.tab').boundingClientRect(function (res) {
+  query.select(item).boundingClientRect(function (res) {
+    console.log(res.height)
     cb(res.height);
   }).exec()
 }
