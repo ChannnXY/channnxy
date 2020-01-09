@@ -59,7 +59,7 @@ Page({
       that.setData({ tabFlag: true })
       wx.pageScrollTo({
         scrollTop: this.data.winHeight,
-        duration:100
+        duration:200
       })
       //隐藏图片,先滑动，再隐藏图片
       setTimeout(function () {
@@ -72,7 +72,7 @@ Page({
         util.getItemHeight('.tab',function(res){
           that.setData({ tabHeight: res})
         })
-      }, 100);
+      }, 200);
     }
   },
 
@@ -83,7 +83,7 @@ Page({
     let endY = e.changedTouches[0].pageY;
     if ((this.data.startY - endY) <- 5) {
       //上滑显示图片
-      that.setData({ imgFlag: false,tabFlag:false })
+      that.setData({ imgFlag: false })
       wx.pageScrollTo({
         scrollTop: this.data.winHeight,
         duration: 0
@@ -92,9 +92,12 @@ Page({
       setTimeout(function () {
         wx.pageScrollTo({
           scrollTop: 0,
-          duration: 100
+          duration: 300
         })
-      }, 100);
+        that.setData({
+          tabFlag: false
+        })
+      }, 300);
     }
   },
 
@@ -105,7 +108,7 @@ Page({
       //上滑不是由回到顶部按钮触发的
       var that = this;
       //上滑显示图片
-      that.setData({ imgFlag: false, tabFlag: false, topFlag:false })
+      that.setData({ imgFlag: false, topFlag:false })
       wx.pageScrollTo({
         scrollTop: this.data.winHeight,
         duration: 0
@@ -113,9 +116,12 @@ Page({
       setTimeout(function () {
         wx.pageScrollTo({
           scrollTop: 0,
-          duration: 100
+          duration: 300
         })
-      }, 100);
+        that.setData({
+          tabFlag: false
+        })
+      }, 300);
     }
   },
 
