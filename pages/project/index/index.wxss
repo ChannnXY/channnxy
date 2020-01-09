@@ -37,9 +37,9 @@
   color: #6682D6;
 }
 
-.intro{
-  width: 100%;
-  position: fixed;
+.intro{}
+
+.intro--scroll{
   padding: 0 36rpx 36rpx 36rpx;
 }
 
@@ -70,4 +70,33 @@
   display: flex;
   width: 686rpx;
   height: 1200rpx;
+}
+
+.to-top{
+  position: absolute;
+  bottom: 36rpx;
+  right: 36rpx;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 128rpx;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10rpx 30rpx rgba(00, 00, 00, 0.05);
+}
+
+.to-top--outer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.to-top--image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.to-top--text{
+  font-size: 24rpx;
+  color: #9A9797;
 }

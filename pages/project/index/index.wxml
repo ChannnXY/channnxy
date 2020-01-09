@@ -8,56 +8,86 @@
 </image>
 
 <!-- 标签栏 -->
-<view class='tab'>
+<view class='tab' wx:if="{{tabFlag}}">
     <view wx:for="{{tabList}}"
             wx:key="{{index}}"
             wx:for-index="idx"
             bindtap='tabClickListener'
             data-index='{{idx}}'
-            class="tab--item {{currrentTab==idx?'tab--item__dark':'tab--item__light'}}">{{item}}</view>
+            class="tab--item {{currentTab==idx?'tab--item__dark':'tab--item__light'}}"
+            bindtouchstart='imgScrollStartListener'
+            bindtouchend='tabScrollEndListener'
+            >{{item}}</view>
 </view>
 
-
+<!-- 滑动内容 -->
+<swiper current="{{currentTab}}" duration="300" style="height:{{winHeight-tabHeight}}px" bindchange="tabSwiperListener" wx:if="{{tabFlag}}">
+  <swiper-item>
     <!-- 项目简介 -->
     <scroll-view class="intro"
-                      wx:if="{{currrentTab===0}}"
-                      style='padding-top:{{topHeight}}'
+                      scroll-top='{{top_0}}'
+                      enable-back-to-top="true"
+                      style='height:{{winHeight-tabHeight}}px'
+                      bindscrolltoupper="scrollViewListener"
                       scroll-y="true">
-      <view class='intro--title'>团队责任</view>
-      <view wx:for="{{intro}}" wx:key="{{index}}" class='intro--text'>
-        {{item}}
-      </view>
-      <view class='intro--title'>项目简介</view>
-      <view wx:for="{{roles}}" wx:key="{{index}}" class='intro--text'>
-        {{item}}
-      </view>
-      <view class='intro--title'>项目成果</view>
-      <view wx:for="{{result}}" wx:key="{{index}}" class='intro--text'>
-        {{item}}
+        <view class='intro--scroll'>
+          <view class='intro--title'>团队责任</view>
+          <view wx:for="{{intro}}" wx:key="{{index}}" class='intro--text'>
+            {{item}}
+          </view>
+          <view class='intro--title'>项目简介</view>
+          <view wx:for="{{roles}}" wx:key="{{index}}" class='intro--text'>
+            {{item}}
+          </view>
+          <view class='intro--title'>项目成果</view>
+          <view wx:for="{{result}}" wx:key="{{index}}" class='intro--text'>
+            {{item}}
+          </view>
       </view>
     </scroll-view>
+  </swiper-item>
 
+  <swiper-item>
     <!-- 产品展示 -->
     <scroll-view class="intro"
-                      wx:if="{{currrentTab===1}}"
-                      style='padding-top:{{topHeight}}'
+                      scroll-top='{{top_1}}'
+                      enable-back-to-top="true"
+                      bindscrolltoupper="scrollViewListener"
+                      style='height:{{winHeight-tabHeight}}px'
                       scroll-y="true">
-      <image wx:for="{{products}}" wx:key="{{index}}" src='{{item}}' class='intro--image__aspectFill'></image>
-    </scroll-view>
-
-    <!-- 技术难点 -->
-    <scroll-view class="intro"
-                      wx:if="{{currrentTab===2}}"
-                      style='padding-top:{{topHeight}}'
-                      scroll-y="true">
-      <view wx:for="{{problems}}" wx:key="{{index}}" wx:for-index="idx">
-        <view class='intro--title'>技术难点{{idx+1}}</view>
-        <view class='intro--text'>
-          问题描述：{{item.intro}}
-        </view>
-        <view class='intro--text'>
-          解决方案：{{item.solutions}}
-        </view>
-        <image wx:if="{{item.url.length>0}}" src='{{item.url}}' class="intro--image"></image>
+      <view class='intro--scroll'>
+        <image wx:for="{{products}}" wx:key="{{index}}" src='{{item}}' class='intro--image__aspectFill'></image>
       </view>
     </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <!-- 技术难点 -->
+    <scroll-view class="intro"
+                      scroll-top='{{top_2}}'
+                      style='height:{{winHeight-tabHeight}}px'
+                      bindscrolltoupper="scrollViewListener"
+                      enable-back-to-top="true"
+                      scroll-y="true">
+      <view class='intro--scroll'>
+        <view wx:for="{{problems}}" wx:key="{{index}}" wx:for-index="idx">
+          <view class='intro--title'>技术难点{{idx+1}}</view>
+          <view class='intro--text'>
+            问题描述：{{item.intro}}
+          </view>
+          <view class='intro--text'>
+            解决方案：{{item.solutions}}
+          </view>
+          <image wx:if="{{item.url.length>0}}" src='{{item.url}}' class="intro--image"></image>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+<view bindtap='toTopClickListener' wx:if="{{tabFlag}}" class='to-top' data-idx='{{currentTab}}'>
+  <view class='to-top--outer'>
+    <image src='/images/img.png' class='to-top--image'></image>
+    <view class='to-top--text'>回顶</view>
+  </view>
+</view>

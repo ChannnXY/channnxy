@@ -5,9 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //swiper相关参数
     tabList: ["项目简介","产品展示","技术难点"],
-    currrentTab:0,
+    currentTab:0,
+    //图片模式还是文字模式
     imgFlag:false,
+    tabFlag:false,
+    //scroll-view的顶部
+    top_0: 0,
+    top_1: 0,
+    top_2: 0,
+    topFlag:false,
     // 项目简介
     intro: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "],
     //角色责任
@@ -47,13 +55,15 @@ Page({
     let endY = e.changedTouches[0].pageY;
     // console.log(this.data.startY - endY)
     if ((this.data.startY - endY)>5) {
+      //下滑
+      that.setData({ tabFlag: true })
       wx.pageScrollTo({
         scrollTop: this.data.winHeight,
         duration:100
       })
       //隐藏图片,先滑动，再隐藏图片
       setTimeout(function () {
-        that.setData({ imgFlag: true })
+        that.setData({ imgFlag: true})
         wx.pageScrollTo({
           scrollTop: 0,
           duration: 0
@@ -66,71 +76,78 @@ Page({
     }
   },
 
+  //tab上滑手势监听
+  tabScrollEndListener: function (e) {
+    var that = this;
+    //终止触摸的Y值
+    let endY = e.changedTouches[0].pageY;
+    if ((this.data.startY - endY) <- 5) {
+      //上滑显示图片
+      that.setData({ imgFlag: false,tabFlag:false })
+      wx.pageScrollTo({
+        scrollTop: this.data.winHeight,
+        duration: 0
+      })
+      //隐藏图片,先滑动，再隐藏图片
+      setTimeout(function () {
+        wx.pageScrollTo({
+          scrollTop: 0,
+          duration: 100
+        })
+      }, 100);
+    }
+  },
+
+  //scroll上滑手势监听
+  scrollViewListener: function () {
+    console.log(this.data.topFlag)
+    if(!this.data.topFlag){
+      //上滑不是由回到顶部按钮触发的
+      var that = this;
+      //上滑显示图片
+      that.setData({ imgFlag: false, tabFlag: false, topFlag:false })
+      wx.pageScrollTo({
+        scrollTop: this.data.winHeight,
+        duration: 0
+      })
+      setTimeout(function () {
+        wx.pageScrollTo({
+          scrollTop: 0,
+          duration: 100
+        })
+      }, 100);
+    }
+  },
+
   /*
   *tab点击和滑动监听
   */
   tabClickListener:function(e){
     this.setData({
-      currrentTab:parseInt(e.currentTarget.dataset.index)
+      currentTab:parseInt(e.currentTarget.dataset.index)
     })
   },
 
   tabSwiperListener:function(e){
     var that = this;
-    if (that.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentTab: e.target.dataset.current,
-      })
-    };
+    that.setData({
+      currentTab: e.detail.current
+    })
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 回到顶部按钮监听
    */
-  onReady: function () {
-
+  toTopClickListener:function(e){
+    var that = this;
+    var top_id = "top_"+e.currentTarget.dataset.idx ;
+    this.setData({
+      [top_id]:0,
+      topFlag: true
+    })
+    //回顶结束之后把flag改回来
+    setTimeout(function(){
+      that.setData({topFlag: false})
+    },100);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  }
 })
