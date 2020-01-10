@@ -9,7 +9,7 @@ function getWinHeight(cb){
 function getItemHeight(item,cb){
   var query = wx.createSelectorQuery();
   query.select(item).boundingClientRect(function (res) {
-    console.log(res.height)
+    // console.log(res.height)
     cb(res.height);
   }).exec()
 }

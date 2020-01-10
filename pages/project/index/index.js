@@ -15,7 +15,7 @@ Page({
     top_0: 0,
     top_1: 0,
     top_2: 0,
-    topFlag:false,
+    scrollViewTop:0,
     // 项目简介
     intro: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "],
     //角色责任
@@ -81,7 +81,7 @@ Page({
     var that = this;
     //终止触摸的Y值
     let endY = e.changedTouches[0].pageY;
-    if ((this.data.startY - endY) <- 5) {
+    if (((this.data.startY - endY) < - 5) && (this.data.scrollViewTop < 5)) {
       //上滑显示图片
       that.setData({ imgFlag: false })
       wx.pageScrollTo({
@@ -102,27 +102,9 @@ Page({
   },
 
   //scroll上滑手势监听
-  scrollViewListener: function () {
-    console.log(this.data.topFlag)
-    if(!this.data.topFlag){
-      //上滑不是由回到顶部按钮触发的
-      var that = this;
-      //上滑显示图片
-      that.setData({ imgFlag: false, topFlag:false })
-      wx.pageScrollTo({
-        scrollTop: this.data.winHeight,
-        duration: 0
-      })
-      setTimeout(function () {
-        wx.pageScrollTo({
-          scrollTop: 0,
-          duration: 300
-        })
-        that.setData({
-          tabFlag: false
-        })
-      }, 300);
-    }
+  scrollViewListener: function (e) {
+    //设置
+    this.setData({ scrollViewTop: e.detail.scrollTop})
   },
 
   /*
@@ -149,11 +131,6 @@ Page({
     var top_id = "top_"+e.currentTarget.dataset.idx ;
     this.setData({
       [top_id]:0,
-      topFlag: true
     })
-    //回顶结束之后把flag改回来
-    setTimeout(function(){
-      that.setData({topFlag: false})
-    },100);
   },
 })
