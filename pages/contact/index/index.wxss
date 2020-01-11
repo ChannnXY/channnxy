@@ -89,6 +89,36 @@
   color: #464646;
 }
 
+.card--time{
+  display: flex;
+  font-size: 28rpx;
+  color: #B2B2B2;
+  justify-content: space-between;
+}
+
+.tips{
+  position: relative;
+  text-align: center;
+  height: 36rpx;
+  padding: 0 36rpx;
+}
+
+.tips--line{
+  position: absolute;
+  transform: translateY(18rpx);
+  width: 90%;
+  height: 2rpx;
+  background-color: #B2B2B2;
+}
+
+.tips--text{
+  position: relative;
+  z-index: 999;
+  font-size: 28rpx;
+  color: #B2B2B2;
+  line-height: 36rpx;
+}
+
 .card--content{
   margin-top: 36rpx;
   font-size: 28rpx;

@@ -3,31 +3,49 @@
   <view class='header--subTitle'>如果你有什么要问我的可以在这里留言</view>
 </view>
 
-<scroll-view style='height:{{winHeight-headerHeight-78}}px' scroll-y="true">
-  <view class='card'>
+<scroll-view style='height:{{winHeight-headerHeight-78}}px' 
+                scroll-y="true"
+                bindscrolltolower='getContactList'>
+  <view class='card'
+            wx:for="{{contactList}}"
+            wx:key="{{index}}"
+            wx:if='{{contactList.length>0}}'>
     <view class='card--user'>
-      <image src='http://via.placeholder.com/36x36' class='card--image'></image>
-      <view class='card--name'>Your name</view>
+      <image src='{{item.avatarUrl}}' class='card--image'></image>
+      <view class='card--name'>{{item.nickName}}</view>
     </view>
-    <view class='card--content'>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "</view>
+    <view class='card--content'>{{item.content}}</view>
+    <view class='card--time'>
+    <view style='text-decoration:underline;flex:1' wx:if='{{item.user_id===user.id}}' bindtap='delete_check' data-id='{{item.id}}' data-idx='{{index}}'>删除</view>
+    <view style="{{item.user_id===user.id?'':'width:100%;text-align:right'}}">发布时间：{{item.time}}</view>
+    </view>
+    
+  </view>
+
+  <view class='tips'>
+  <view class='tips--line'></view>
+  <view class='tips--text'><span style='background-color:#FFFFFF'>{{contact.text}}</span></view>
   </view>
 </scroll-view>
 
 <!-- 用户是否授权，没授权显示登录按钮 -->
 <view class='input' wx:if='{{loginFlag}}'>
   <button open-type='getUserInfo' type='primary' bindgetuserinfo="bindGetUserInfo" class='input--login'>
-    登录后再发言哦！
+    登录后再留言哦！
   </button>
 </view>
 
-<view class='input' 
-          style='bottom:{{keyBoardBottom}}px'
-          wx:else>
-  <image src='{{user.avatarUrl}}' class='input--image'></image>
-  <input placeholder='鼓励下作者吧'
-            placeholder-class='input--placeholder'
-            bindfocus='keyBoardFocusListener'
-            bindblur='keyBoardBlurListener'
-            class='input--input'></input>
-  <button class='input--button'>发送</button>
-</view>
+<form bindreset='submit' wx:else>
+  <view class='input' 
+            style='bottom:{{keyBoardBottom}}px'>
+    <image src='{{user.avatarUrl}}' class='input--image'></image>
+      <input placeholder='鼓励下作者吧'
+                placeholder-class='input--placeholder'
+                bindinput='input_contact'
+                value='{{content}}'
+                bindfocus='keyBoardFocusListener'
+                bindblur='keyBoardBlurListener'
+                class='input--input'></input>
+      <button class='input--button' form-type='reset'>发送</button>
+  </view>
+</form>
