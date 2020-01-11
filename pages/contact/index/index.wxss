@@ -39,6 +39,15 @@
   font-size: 28rpx;
 }
 
+.input--login{
+  width: 100%;
+  margin: 16rpx 24rpx;
+  background: linear-gradient(to right,#6682D6,#5B139A);
+  font-size: 28rpx;
+  color: white;
+  line-height: 68rpx;
+}
+
 .header{}
 
 .header--title{

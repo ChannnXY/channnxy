@@ -13,8 +13,17 @@
   </view>
 </scroll-view>
 
-<view class='input'  style='bottom:{{keyBoardBottom}}px'>
-  <image src='http://via.placeholder.com/36x36' class='input--image'></image>
+<!-- 用户是否授权，没授权显示登录按钮 -->
+<view class='input' wx:if='{{loginFlag}}'>
+  <button open-type='getUserInfo' type='primary' bindgetuserinfo="bindGetUserInfo" class='input--login'>
+    登录后再发言哦！
+  </button>
+</view>
+
+<view class='input' 
+          style='bottom:{{keyBoardBottom}}px'
+          wx:else>
+  <image src='{{user.avatarUrl}}' class='input--image'></image>
   <input placeholder='鼓励下作者吧'
             placeholder-class='input--placeholder'
             bindfocus='keyBoardFocusListener'

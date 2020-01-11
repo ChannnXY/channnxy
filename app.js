@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    // url:'localhost:3000/',
+    url: 'http://192.168.137.1:3000/',
+    token:''
   }
 })

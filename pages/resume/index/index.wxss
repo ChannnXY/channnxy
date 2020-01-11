@@ -29,9 +29,9 @@
   position: fixed;
   bottom: 36rpx;
   right: 36rpx;
-  width: 128rpx;
-  height: 128rpx;
-  border-radius: 128rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 10rpx 30rpx rgba(00, 00, 00, 0.05);
 }

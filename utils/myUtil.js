@@ -14,7 +14,37 @@ function getItemHeight(item,cb){
   }).exec()
 }
 
+//get请求
+var app = getApp();
+function ajax(url, data, isPost, success,  complete){
+  //自动拼接url
+  url = app.globalData.url + url;
+  wx.request({
+    url: url,
+    data: data,
+    method: isPost ? 'POST' : 'GET',
+    success: success,
+    complete: complete
+  })
+}
+
+//时锁
+function throttle(func, delay) {
+  var lastTime;
+  return function () {
+    var context = this;
+    var args = arguments;
+    var nowTime = new Date().getTime();
+    if (!lastTime || nowTime > lastTime + delay) {
+      lastTime = nowTime;
+      func.apply(context, args)
+    }
+  }
+}
+
 module.exports={
   getWinHeight: getWinHeight,
-  getItemHeight: getItemHeight
+  getItemHeight: getItemHeight,
+  ajax: ajax,
+  throttle: throttle
 }
