@@ -1,23 +1,18 @@
-var util = require('../../../utils/myUtil.js');
+// pages/honor/secondLevelPage/webview/webview.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    util.ajax('honor/list',null,false,function(res){
-      that.setData({
-        content:res.data.data
-      })
-    })
+
   },
 
   /**

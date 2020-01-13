@@ -1,16 +1,15 @@
 <view class='card' wx:for="{{content}}" wx:key="{{index}}" wx:for-index="idx">
   <view style='display:flex;align-items:center'>
     <view class="{{idx==0?'card--number__dark':'card--number__light'}}">{{idx+1}}</view>
-    <view class='card--title'>{{item.horner}}</view>
+    <view class='card--title'>{{item.title}}</view>
   </view>
   <view style='text-align:right'>
-    <image src='{{item.img}}' mode='widthFix' class='card--image'></image>
+    <image src='{{item.image}}' mode='widthFix' class='card--image'></image>
   </view>
-  <navigator 
-                  url=''
+  <navigator url='/pages/honor/secondLevelPage/webview/webview?id={{repo.repo_id}}'
                   hover-class='none'
                   class='report--nav-outer'
-                  wx:if="{{item.subtitleList.length>0}}">
+                  wx:if="{{item.repo.length>0}}">
     <view  class='report--nav-inline'>
       <view class='report--button'>相关报道</view>
       <view class='report--button' style='margin:0 24rpx'>|</view>
@@ -21,11 +20,10 @@
                 circular='true' 
                 vertical='true'
                 style='height:66rpx;flex:1'>
-        <swiper-item
-                            wx:for="{{item.subtitleList}}"
+        <swiper-item  wx:for="{{item.repo}}"
                             wx:key="index"
-                            wx:for-item="subtitle">
-              <view class='report--subtitle'>{{subtitle.title}}</view>
+                            wx:for-item="repo">
+            <view class='report--subtitle'>{{repo.repo_title}}</view>
         </swiper-item>
       </swiper>
     </view>

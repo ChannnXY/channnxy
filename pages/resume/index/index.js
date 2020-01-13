@@ -1,4 +1,4 @@
-// pages/resume/index/index.js
+var util = require('../../../utils/myUtil.js');
 Page({
 
   /**
@@ -7,6 +7,7 @@ Page({
   data: {
     tipAnimationFlag:false,
     tipFlag:false
+    
   },
 
   /**
@@ -16,7 +17,27 @@ Page({
     var that = this;
     //定时任务，出现和隐藏角标
     this.showTips();
+    this.initData();
   },
+
+   /*
+  * 初始化数据
+  */
+  initData:function(){
+    var that = this;
+    util.ajax('resume/get',null,false,function(res){
+      console.log(res.data.data)
+      var data = res.data.data;
+      that.setData({
+        competition:data.competition,
+        experience: data.experience,
+        info: data.info,
+        project: data.project,
+        skills: data.skills,
+      })
+    })
+  },
+
   /*
   * 出现和隐藏角标
   */

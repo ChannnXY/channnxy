@@ -58,8 +58,8 @@
   display: flex;
   align-items: center;
   position: fixed;
-  right: 172rpx;
-  bottom: 74rpx;
+  right: 150rpx;
+  bottom: 60rpx;
   transition: opacity 1s;
 }
 

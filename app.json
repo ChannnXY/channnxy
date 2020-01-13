@@ -1,12 +1,14 @@
 {
   "pages": [
-    "pages/contact/index/index",
     "pages/resume/index/index",
-    "pages/project/index/index",
     "pages/honor/index/index",
+    "pages/project/index/index",
+    "pages/project/secondLevelPage/content/content",
+    "pages/contact/index/index",
     "pages/competition/index/index",
     "pages/logs/logs",
-    "pages/competition/secondPage/content/content"
+    "pages/competition/secondPage/content/content",
+    "pages/honor/secondLevelPage/webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",
