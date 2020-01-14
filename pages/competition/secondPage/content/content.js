@@ -1,28 +1,24 @@
-// pages/competition/secondPage/content/content.js
+var util = require('../../../../utils/myUtil.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content:{
-      title: "国家大学生创新创业项目",
-      subtitle: "——《PBL理论指导下的乡村振兴战略研究》",
-      honor: "立项并结题",
-      isLike: false,
-      likesNumber: 320,
-      swiperList: ['http://via.placeholder.com/375x420', 'http://via.placeholder.com/375x420', 'http://via.placeholder.com/375x420'],
-      role: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-      intro: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "],
-      result: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ", 'http://via.placeholder.com/375x350',"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "],
-    }
-    
+    content:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var data = {id:parseInt(options.id)}
+    util.ajax('competition/getItem',data,false,function(res){
+      that.setData({
+        content:res.data.data
+      })
+    })
   },
 
   /**

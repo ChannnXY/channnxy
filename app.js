@@ -1,4 +1,5 @@
-//app.js
+//app.
+const Towxml = require('/towxml-master/main');
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -36,7 +37,8 @@ App({
   globalData: {
     userInfo: null,
     // url:'localhost:3000/',
-    url: 'http://192.168.137.1:3000/',
+    url: 'http://10.11.11.215:3000/',
     token:''
-  }
+  },
+  towxml: new Towxml()
 })

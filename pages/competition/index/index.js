@@ -1,4 +1,4 @@
-// pages/competition/index/index.js
+var util = require('../../../utils/myUtil.js');
 Page({
 
   /**
@@ -6,45 +6,17 @@ Page({
    */
   data: {
     // 荣誉列表
-    competitionList:[{
-      id:100000,
-      title:"国家大学生创新创业项目",
-      subtitle:"——《PBL理论指导下的乡村振兴战略研究》",
-      progress:100,
-      role:"界面交互设计，产品设计",
-      intro:"基于对安吉余村的实地调研，设计与开发关于推动国际化乡村旅游的程序。"
-    },
-    {
-      id: 100000,
-      title: "国家大学生创新创业项目",
-      subtitle: "——《PBL理论指导下的乡村振兴战略研究》",
-      progress: 80,
-      role: "界面交互设计，产品设计",
-      intro: "基于对安吉余村的实地调研，设计与开发关于推动国际化乡村旅游的程序。"
-    }, 
-    {
-      id: 100000,
-      title: "国家大学生创新创业项目",
-      subtitle: "——《PBL理论指导下的乡村振兴战略研究》",
-      progress: 60,
-      role: "界面交互设计，产品设计",
-      intro: "基于对安吉余村的实地调研，设计与开发关于推动国际化乡村旅游的程序。"
-      },
-      {
-        id: 100000,
-        title: "国家大学生创新创业项目",
-        subtitle: "——《PBL理论指导下的乡村振兴战略研究》",
-        progress: 60,
-        role: "界面交互设计，产品设计",
-        intro: "基于对安吉余村的实地调研，设计与开发关于推动国际化乡村旅游的程序。"
-      }]
+    competitionList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    util.ajax('competition/list',null,false,function(res){
+      that.setData({competitionList:res.data.data})
+    })
   },
 
   /**

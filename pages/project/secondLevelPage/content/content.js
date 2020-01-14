@@ -1,4 +1,5 @@
 var util = require('../../../../utils/myUtil.js');
+var app = getApp();
 Page({
 
   /**
@@ -20,9 +21,10 @@ Page({
     //项目成果
     result: [],
     //技术难点
-    problems: [{ intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the", solutions: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the", url: "http://via.placeholder.com/343x300" }, { intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the", solutions: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" }, { intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the", solutions: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" }],
+    problems: "```tar xvf node-v8.16.2-linux-x64.tar.xz```",
     //产品展示
-    products: ["http://via.placeholder.com/343x600", "http://via.placeholder.com/343x600", "http://via.placeholder.com/343x600"]
+    products: ["http://via.placeholder.com/343x600", "http://via.placeholder.com/343x600", "http://via.placeholder.com/343x600"],
+    flags:[true,true,true]
   },
 
   /**
@@ -40,19 +42,19 @@ Page({
     wx.setNavigationBarTitle({
       title: options.title,
     })
-    this.initData(parseInt(options.id));
+    this.initIntro(parseInt(options.id));
   },
 
   /*
   *初始化数据
   */
-  initData:function(e){ 
+  initIntro:function(e){ 
     var that = this;
     wx.showLoading({
       title: '正在加载中',
     })
     var data = {id:e};
-    util.ajax('project/getItem',data,false,function(res){
+    util.ajax('project/getItemIntro',data,false,function(res){
       wx.hideLoading();
       var data = res.data.data
       that.setData({
@@ -77,6 +79,22 @@ Page({
     that.setData({
       currentTab: e.detail.current
     })
+    if(this.data.flags[e.detail.current]&&e.detail.current === 1 ){
+      this.initProjects();
+    } else if (this.data.flags[e.detail.current] && e.detail.current === 2 ){
+      this.initProblems();
+    }
+  },
+
+  initProblems:function(){
+    var data = app.towxml.toJson(this.data.problems, 'markdown');
+    this.setData({
+      problems:data
+    })
+  },
+
+  initProjects: function () {
+
   },
 
   /**

@@ -56,7 +56,7 @@
                           style='height:{{winHeight-tabHeight}}px'
                           enable-back-to-top="true"
                           scroll-y="true">
-          <view class='intro--scroll'>
+          <!-- <view class='intro--scroll'>
             <view wx:for="{{problems}}" wx:key="{{index}}" wx:for-index="idx">
               <view class='intro--title'>技术难点{{idx+1}}</view>
               <view class='intro--text'>
@@ -67,7 +67,9 @@
               </view>
               <image wx:if="{{item.url.length>0}}" src='{{item.url}}' class="intro--image"></image>
             </view>
-          </view>
+          </view> -->
+          <import src="/towxml-master/entry.wxml"/>
+          <template is="entry" data="{{...problems}}"/>
         </scroll-view>
       </swiper-item>
     </swiper>

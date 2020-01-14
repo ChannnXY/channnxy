@@ -19,8 +19,8 @@
       </view>
       <progress 
       percent='{{item.progress}}'
-      color="{{item.progress==100?'#9D7FCA':'#F7F7F7'}}"
-      activeColor="{{item.progress==100?'#FFFFFF':'#441A68'}}"
+      color="{{idx==0?'#9D7FCA':'#F7F7F7'}}"
+      activeColor="{{idx==0?'#FFFFFF':'#441A68'}}"
       border-radius='8'>
       </progress>
     </view>
@@ -31,7 +31,7 @@
     <view class='card--devide'></view>
     <view class='card--right-content'>
       <view>团队角色：{{item.role}}</view>
-      <view>项目简介：{{item.intro}}</view>
+      <view class='card--right-intro'>项目简介：{{item.introduction}}</view>
     </view>
   </view>
 </navigator>
