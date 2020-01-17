@@ -10,7 +10,7 @@
               indicator-active-color='#fff' 
               style='height:700rpx'>
     <swiper-item wx:for="{{content.img}}" wx:key="index">
-      <image src='{{item.img_url}}' lazy-load='true' class='swiper--img'></image>
+      <image src='{{item}}' lazy-load='true' class='swiper--img' mode='aspectFill' bindtap='image_review' data-idx='{{index}}'></image>
     </swiper-item>
   </swiper>
 </view>

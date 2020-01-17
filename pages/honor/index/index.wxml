@@ -4,7 +4,7 @@
     <view class='card--title'>{{item.title}}</view>
   </view>
   <view style='text-align:right'>
-    <image src='{{item.image}}' mode='widthFix' class='card--image'></image>
+    <image src='{{item.image}}' mode='widthFix' class='card--image' bindtap='image_review' data-index='{{idx}}'></image>
   </view>
   <navigator url='/pages/honor/secondLevelPage/webview/webview?id={{repo.repo_id}}'
                   hover-class='none'

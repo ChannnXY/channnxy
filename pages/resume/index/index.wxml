@@ -103,7 +103,7 @@
 <!-- 分享按钮 -->
 <view class='share'>
   <view class='share--outer'>
-    <image src='/images/img.png' class='share--image'></image>
+    <image src='/images/send.png' class='share--image'></image>
     <view class='share--text'>分享</view>
   </view>
 </view>

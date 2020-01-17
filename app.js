@@ -36,8 +36,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    // url:'localhost:3000/',
-    url: 'http://10.11.11.215:3000/',
+    // url:'https://www.channnxy.cn/',
+    url: 'http://192.168.43.177:3000/',
+    // url: 'http://117.50.22.42:3000/',
     token:''
   },
   towxml: new Towxml()

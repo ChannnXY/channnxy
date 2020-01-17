@@ -42,6 +42,9 @@ Page({
     wx.setNavigationBarTitle({
       title: options.title,
     })
+    this.setData({
+      id : parseInt(options.id)
+    })
     this.initIntro(parseInt(options.id));
   },
 

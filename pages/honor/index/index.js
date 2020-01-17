@@ -20,6 +20,19 @@ Page({
     })
   },
 
+  image_review: function (e) {
+    var that = this;
+    var idx = parseInt(e.currentTarget.dataset.index);
+    var url = new Array();
+    url.push(that.data.content[idx].image);
+    wx.previewImage({
+      current: that.data.content[idx].image,
+      urls: url,
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

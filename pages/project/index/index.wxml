@@ -11,6 +11,7 @@
     <navigator url='/pages/project/secondLevelPage/content/content?id={{item.id}}&title={{item.title}}'>
         <image src='{{item.img}}'
                     class='swiper--img'
+                    mode='aspectFill'
                     style='height:{{winHeight}}px'>
       </image>
     </navigator>

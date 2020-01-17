@@ -76,7 +76,7 @@
 
     <view bindtap='toTopClickListener' class='to-top' data-idx='{{currentTab}}'>
       <view class='to-top--outer'>
-        <image src='/images/img.png' class='to-top--image'></image>
+        <image src='/images/send.png' class='to-top--image'></image>
         <view class='to-top--text'>回顶</view>
       </view>
     </view>

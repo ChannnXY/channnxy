@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/resume/index/index",
     "pages/project/index/index",
     "pages/competition/index/index",
-    "pages/resume/index/index",
     "pages/honor/index/index",
     "pages/contact/index/index",
     "pages/logs/logs",
@@ -24,32 +24,32 @@
       {
         "pagePath": "pages/resume/index/index",
         "text": "简历",
-        "iconPath": "/images/img.png",
-        "selectedIconPath": "/images/img.png"
+        "iconPath": "/images/1-1.png",
+        "selectedIconPath": "/images/1-2.png"
       },
       {
         "pagePath": "pages/competition/index/index",
         "text": "竞赛",
-        "iconPath": "/images/img.png",
-        "selectedIconPath": "/images/img.png"
+        "iconPath": "/images/2-1.png",
+        "selectedIconPath": "/images/2-2.png"
       },
       {
         "pagePath": "pages/project/index/index",
         "text": "项目",
-        "iconPath": "/images/img.png",
-        "selectedIconPath": "/images/img.png"
+        "iconPath": "/images/3-1.png",
+        "selectedIconPath": "/images/3-2.png"
       },
       {
         "pagePath": "pages/honor/index/index",
         "text": "荣誉",
-        "iconPath": "/images/img.png",
-        "selectedIconPath": "/images/img.png"
+        "iconPath": "/images/4-1.png",
+        "selectedIconPath": "/images/4-2.png"
       },
       {
         "pagePath": "pages/contact/index/index",
         "text": "留言",
-        "iconPath": "/images/img.png",
-        "selectedIconPath": "/images/img.png"
+        "iconPath": "/images/5-1.png",
+        "selectedIconPath": "/images/5-2.png"
       }
     ]
   }
