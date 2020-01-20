@@ -19,6 +19,7 @@ Page({
     })
 
     util.ajax('project/getList',null,false,function(res){
+      wx.hideLoading();
       that.setData({imageUrl:res.data.data})
     })
   },

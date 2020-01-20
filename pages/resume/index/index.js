@@ -26,7 +26,8 @@ Page({
   initData:function(){
     var that = this;
     util.ajax('resume/get',null,false,function(res){
-      console.log(res.data.data)
+      wx.hideLoading();
+      // console.log(res.data.data)
       var data = res.data.data;
       that.setData({
         competition:data.competition,
@@ -65,11 +66,17 @@ Page({
     })
   },
 
+  //点击转发
+  onShareMenu:function(){
+    wx.showShareMenu({
+      withShareTicket:true
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

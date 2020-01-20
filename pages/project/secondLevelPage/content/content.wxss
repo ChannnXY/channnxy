@@ -73,8 +73,15 @@
 
 .intro--image__aspectFill{
   display: flex;
+  margin: 0;
   width: 686rpx;
-  height: 1200rpx;
+}
+
+.intro--blank{
+  font-size: 28rpx;
+  color: #b2b2b2;
+  line-height: 36rpx;
+  text-align: center;
 }
 
 .to-top{
@@ -99,9 +106,10 @@
 .to-top--image{
   width: 40rpx;
   height: 40rpx;
+  margin: 0;
 }
 
 .to-top--text{
   font-size: 24rpx;
-  color: #9A9797;
+  color: #6682D6;
 }

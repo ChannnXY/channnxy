@@ -21,9 +21,9 @@ Page({
     //项目成果
     result: [],
     //技术难点
-    problems: "```tar xvf node-v8.16.2-linux-x64.tar.xz```",
+    problems: "",
     //产品展示
-    products: ["http://via.placeholder.com/343x600", "http://via.placeholder.com/343x600", "http://via.placeholder.com/343x600"],
+    products: [],
     flags:[true,true,true]
   },
 
@@ -53,9 +53,6 @@ Page({
   */
   initIntro:function(e){ 
     var that = this;
-    wx.showLoading({
-      title: '正在加载中',
-    })
     var data = {id:e};
     util.ajax('project/getItemIntro',data,false,function(res){
       wx.hideLoading();
@@ -97,7 +94,15 @@ Page({
   },
 
   initProjects: function () {
-
+    var that = this;
+    var data = { id : that.data.id }
+    util.ajax('project/getImage',data,false,function(res){
+      wx.hideLoading();
+      that.setData({
+        products:res.data.data,
+        ['flags[1]']:false
+      })
+    })
   },
 
   /**
@@ -109,5 +114,18 @@ Page({
     this.setData({
       [top_id]: 0,
     })
-  }
+  },
+
+/*
+*
+*/
+previewImg: function(e){
+  var that = this;
+  var index = e.currentTarget.dataset.idx;
+  wx.previewImage({
+    current:that.data.problems[index],
+    urls: that.data.products,
+  })
+}
+
 })

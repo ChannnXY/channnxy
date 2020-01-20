@@ -58,7 +58,6 @@ Page({
         currentPage: this.data.contact.currentPage,
         pageSize: 5
       }
-      wx.showLoading({title: '加载中'})
       util.ajax('contact/get', data,false, function (res) {
         wx.hideLoading();
         //拼接数据和分页
@@ -101,6 +100,7 @@ Page({
                   var data = { code: res.code }
                   util.ajax('users/login', data, false, function (res) {
                     // console.log(res.data.data)
+                    wx.hideLoading();
                     that.setData({
                       loginFlag: false,
                       user:res.data.data
@@ -144,6 +144,7 @@ Page({
             }
           util.ajax('users/register', data, false, function (res) {
             // console.log(res.data.data)
+            wx.hideLoading();
             that.setData({
               loginFlag: false,
               user: res.data.data
@@ -173,7 +174,8 @@ Page({
     }
     if (that.data.content!==0){
       util.ajax('contact/input', data, true,function (res) {
-        console.log(res.data.data);
+        wx.hideLoading();
+        // console.log(res.data.data);
         var time = new Date();
         var year = time.getFullYear();
         var month = time.getMonth() + 1;
@@ -217,7 +219,8 @@ Page({
   delete_contact:throttle(function(data,idx){
     var that = this;
     util.ajax('contact/delete',data,false,function(res){
-      console.log(res);
+      wx.hideLoading();
+      // console.log(res);
       if(res.data.code==200){
         var contactList = that.data.contactList;
         contactList.splice(idx, 1);
@@ -286,6 +289,7 @@ Page({
     }
     util.ajax('contact/get', data, false, function (res) {
       //拼接数据和分页
+      wx.hideLoading();
       var data = res.data.data;
       var contact = that.data.contact;
       contact.hasNextPage = data.hasNextPage;

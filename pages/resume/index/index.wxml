@@ -101,12 +101,12 @@
 </view>
 
 <!-- 分享按钮 -->
-<view class='share'>
+<button class='share'  open-type='share'>
   <view class='share--outer'>
     <image src='/images/send.png' class='share--image'></image>
     <view class='share--text'>分享</view>
   </view>
-</view>
+</button>
 
 <view class="share--tip {{tipAnimationFlag?'share--tip__show':'share--tip__none'}}" wx:if="{{tipFlag}}">
   <view class='share--rec'>转发给你的HR朋友，给孩子口饭吃吧</view>

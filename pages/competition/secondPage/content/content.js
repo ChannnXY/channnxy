@@ -15,6 +15,7 @@ Page({
     var that = this;
     var data = {id:parseInt(options.id)}
     util.ajax('competition/getItem',data,false,function(res){
+      wx.hideLoading();
       that.setData({
         content:res.data.data
       })

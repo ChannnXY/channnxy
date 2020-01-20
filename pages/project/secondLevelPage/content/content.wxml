@@ -43,9 +43,16 @@
                           enable-back-to-top="true"
                           style='height:{{winHeight-tabHeight}}px'
                           scroll-y="true">
-          <view class='intro--scroll'>
-            <image wx:for="{{products}}" wx:key="{{index}}" src='{{item}}' class='intro--image__aspectFill'></image>
+          <view class='intro--scroll' wx:if='{{products.length>0}}'>
+            <image wx:for="{{products}}"
+                        wx:key="{{index}}"
+                        src='{{item}}'
+                        class='intro--image__aspectFill'
+                        mode='widthFix'
+                        data-idx='{{index}}'
+                        bindtap='previewImg'></image>
           </view>
+          <view wx:else class='intro--blank'>内容正在生产中，敬请期待！</view>
         </scroll-view>
       </swiper-item>
 
@@ -76,7 +83,7 @@
 
     <view bindtap='toTopClickListener' class='to-top' data-idx='{{currentTab}}'>
       <view class='to-top--outer'>
-        <image src='/images/send.png' class='to-top--image'></image>
+        <image src='/images/to_top.png' class='to-top--image'></image>
         <view class='to-top--text'>回顶</view>
       </view>
     </view>

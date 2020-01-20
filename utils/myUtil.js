@@ -17,6 +17,10 @@ function getItemHeight(item,cb){
 //get请求
 var app = getApp();
 function ajax(url, data, isPost, success,  complete){
+  //出现加载框
+  wx.showLoading({
+    title: '正在加载中',
+  });
   //自动拼接url
   url = app.globalData.url + url;
   wx.request({

@@ -14,6 +14,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     util.ajax('honor/list',null,false,function(res){
+      wx.hideLoading();
       that.setData({
         content:res.data.data
       })

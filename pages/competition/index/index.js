@@ -15,6 +15,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     util.ajax('competition/list',null,false,function(res){
+      wx.hideLoading();
       that.setData({competitionList:res.data.data})
     })
   },
