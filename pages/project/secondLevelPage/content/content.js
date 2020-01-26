@@ -21,7 +21,7 @@ Page({
     //项目成果
     result: [],
     //技术难点
-    problems: "",
+    problems: [],
     //产品展示
     products: [],
     flags:[true,true,true]
@@ -87,9 +87,20 @@ Page({
   },
 
   initProblems:function(){
-    var data = app.towxml.toJson(this.data.problems, 'markdown');
-    this.setData({
-      problems:data
+    var that = this;
+    var data = { id: that.data.id }
+    util.ajax('project/getProblem', data, false, function (res) {
+      wx.hideLoading();
+      var data = res.data.data;
+      var problems = new Array();
+      for(var i in data){
+        let string2json = app.towxml.toJson(data[i], 'markdown');
+        problems.push(string2json);
+      }
+      that.setData({
+        problems: problems,
+        ['flags[2]']: false
+      })
     })
   },
 

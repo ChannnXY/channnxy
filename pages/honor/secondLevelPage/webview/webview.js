@@ -1,18 +1,24 @@
-// pages/honor/secondLevelPage/webview/webview.js
+var util = require('../../../../utils/myUtil.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var data = {id : parseInt(options.id)}
+    util.ajax('honor/getWebview',data,false,function(res){
+      wx.hideLoading();
+      that.setData({
+        src:res.data.data[0]
+      })
+    })
   },
 
   /**

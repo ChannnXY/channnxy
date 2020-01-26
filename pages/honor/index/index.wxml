@@ -6,9 +6,7 @@
   <view style='text-align:right'>
     <image src='{{item.image}}' mode='widthFix' class='card--image' bindtap='image_review' data-index='{{idx}}'></image>
   </view>
-  <navigator url='/pages/honor/secondLevelPage/webview/webview?id={{repo.repo_id}}'
-                  hover-class='none'
-                  class='report--nav-outer'
+  <view class='report--nav-outer'
                   wx:if="{{item.repo.length>0}}">
     <view  class='report--nav-inline'>
       <view class='report--button'>相关报道</view>
@@ -27,5 +25,5 @@
         </swiper-item>
       </swiper>
     </view>
-  </navigator>
+  </view>
 </view>

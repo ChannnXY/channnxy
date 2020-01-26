@@ -20,18 +20,20 @@
                           style='height:{{winHeight-tabHeight}}px'
                           scroll-y="true">
             <view class='intro--scroll'>
-              <view class='intro--title'>团队责任</view>
-              <view wx:for="{{roles}}" wx:key="{{index}}" class='intro--text'>
-                {{item}}
-              </view>
-              <view class='intro--title'>项目简介</view>
-              <view wx:for="{{intro}}" wx:key="{{index}}" class='intro--text'>
-                {{item}}
-              </view>
-              <view class='intro--title'>项目成果</view>
-              <view wx:for="{{result}}" wx:key="{{index}}" class='intro--text'>
-                {{item}}
-              </view>
+                <view class='intro--title'>团队责任</view>
+                <view wx:for="{{roles}}" wx:key="{{index}}" class='intro--text'>
+                  {{item}}
+                </view>
+
+                <view class='intro--title'>项目简介</view>
+                <view wx:for="{{intro}}" wx:key="{{index}}" class='intro--text'>
+                  {{item}}
+                </view>
+
+                <view class='intro--title'>项目成果</view>
+                <view wx:for="{{result}}" wx:key="{{index}}" class='intro--text'>
+                  {{item}}
+                </view>
           </view>
         </scroll-view>
       </swiper-item>
@@ -63,20 +65,13 @@
                           style='height:{{winHeight-tabHeight}}px'
                           enable-back-to-top="true"
                           scroll-y="true">
-          <!-- <view class='intro--scroll'>
-            <view wx:for="{{problems}}" wx:key="{{index}}" wx:for-index="idx">
-              <view class='intro--title'>技术难点{{idx+1}}</view>
-              <view class='intro--text'>
-                问题描述：{{item.intro}}
-              </view>
-              <view class='intro--text'>
-                解决方案：{{item.solutions}}
-              </view>
-              <image wx:if="{{item.url.length>0}}" src='{{item.url}}' class="intro--image"></image>
+          <view  wx:if='{{problems.length>0}}'>
+            <import src="/towxml-master/entry.wxml"/>
+            <view wx:for='{{problems}}' wx:key="{{index}}">
+              <template is="entry" data="{{...item}}"/>
             </view>
-          </view> -->
-          <import src="/towxml-master/entry.wxml"/>
-          <template is="entry" data="{{...problems}}"/>
+          </view>
+          <view wx:else class='intro--blank'>内容正在生产中，敬请期待！</view>
         </scroll-view>
       </swiper-item>
     </swiper>
